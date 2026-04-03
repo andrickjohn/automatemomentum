@@ -2,21 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
-import About from '../components/About.astro';
-import CTA from '../components/CTA.astro';
+import Process from '../components/Process.astro';
+import Metrics from '../components/Metrics.astro';
 ---
 
-<Layout title="Automate Momentum v2 | Architectural Intelligence">
+<Layout>
 	<main>
 		<Hero />
-		<div style="margin-top: var(--space-2xl);">
-			<Services />
-		</div>
-		<div style="margin-top: var(--space-xl);">
-			<About />
-		</div>
-		<div style="margin-top: var(--space-xl);">
-			<CTA />
-		</div>
+		<Services />
+		<Process />
+		<Metrics />
 	</main>
 </Layout>
