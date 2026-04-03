@@ -13,7 +13,28 @@ const { title = 'Automate Momentum v2' } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<header class="glass-container" style="position: sticky; top: 0; z-index: 1000; padding: var(--space-sm) var(--space-md); display: flex; justify-content: space-between; align-items: center; border-radius: 0; border-top: none; border-left: none; border-right: none;">
+			<div style="font-family: var(--font-mono); font-weight: bold; letter-spacing: 0.05em; font-size: var(--text-base);">
+				AM / <span class="text-accent">V2</span>
+			</div>
+			<nav style="display: flex; gap: var(--space-md); font-size: var(--text-sm);">
+				<a href="#services" style="color: var(--color-text-main); text-decoration: none;">Capabilities</a>
+				<a href="#about" style="color: var(--color-text-main); text-decoration: none;">Mission</a>
+				<a href="mailto:admin@automatemomentum.com" class="text-accent" style="text-decoration: none; font-weight: bold;">Deploy</a>
+			</nav>
+		</header>
+
 		<slot />
+
+		<footer style="padding: var(--space-xl) var(--space-md) var(--space-md); text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: var(--space-2xl);">
+			<div style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-muted);">
+				Engineering the Algorithmic Future.<br/>
+				&copy; {new Date().getFullYear()} Automate Momentum. All rights reserved.
+			</div>
+			<div style="margin-top: var(--space-sm);">
+				<a href="https://www.linkedin.com/company/113349760" target="_blank" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">LinkedIn Fleet</a>
+			</div>
+		</footer>
 		<script>
       // Image lazy-load fade-in script
       document.addEventListener("DOMContentLoaded", function() {
