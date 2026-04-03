@@ -1,0 +1,12 @@
+{
+    "project": "Automate Momentum v2",
+    "limits": {
+        "daily_max_usd": 15.00,
+        "single_task_max_usd": 2.50,
+        "max_retries_per_file": 3
+    },
+    "behavior": {
+        "on_limit_reached": "hibernate_and_notify",
+        "require_approval_above": 5.00
+    }
+}

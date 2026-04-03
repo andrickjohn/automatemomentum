@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --color-primary: #0C0C0C;
+  --color-secondary: #1A1A1A;
+  --color-accent: #4F46E5;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #A1A1AA;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Liquid-responsive typography (Clamp) */
+  --text-xs: clamp(0.75rem, 0.70rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.80rem + 0.38vw, 1rem);
+  --text-base: clamp(1rem, 0.90rem + 0.50vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 0.98rem + 0.75vw, 1.375rem);
+  --text-xl: clamp(1.25rem, 1.05rem + 1.00vw, 1.625rem);
+  --text-2xl: clamp(1.50rem, 1.20rem + 1.50vw, 2rem);
+  --text-3xl: clamp(1.75rem, 1.35rem + 2.00vw, 2.50rem);
+  --text-4xl: clamp(2rem, 1.40rem + 3.00vw, 3rem);
+  --text-5xl: clamp(2.50rem, 1.50rem + 5.00vw, 4rem);
+  --text-6xl: clamp(3rem, 1.50rem + 7.50vw, 5rem);
+  --text-7xl: clamp(3.5rem, 2.00rem + 10vw, 7rem);
+
+  /* Spacious spacing (Visual Density 3) */
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  color: var(--color-text-main);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0 0 var(--space-md) 0;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  max-width: 65ch;
+}
+
+/* Glassmorphism / Sovereign Containers */
+.glass-container {
+  background: rgba(26, 26, 26, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  padding: var(--space-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+/* Fades and spring transitions (Motion Intensity 7) */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-700 { animation-delay: 700ms; }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Utilities */
+.text-accent { color: var(--color-accent); }
+.text-serif { font-family: var(--font-serif); }
+.text-mono { font-family: var(--font-mono); }
+.glow-accent { text-shadow: 0 0 20px rgba(79, 70, 229, 0.4); }
+
+.btn {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.7s ease;
+}
+
+.btn:hover {
+  background-color: #5f57fc;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn:hover::after {
+  left: 100%;
+}
+
+/* Image Lazy Load Fades */
+img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+img.loaded {
+  opacity: 1;
+}
+
+/* Asymmetric / High Variance (Design Variance 9) */
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .asymmetric-grid {
+    grid-template-columns: 5fr 7fr;
+  }
+  .asymmetric-item.left {
+    margin-top: var(--space-xl);
+  }
+}
