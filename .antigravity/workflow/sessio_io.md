@@ -12,6 +12,6 @@
 ## Goodbye (Message in a Bottle)
 1. Write `bottle.txt` with:
    - Summary of changes.
-   - Next session starting point.
-   - "Message in a Bottle" (A short, philosophical summary of the session).
+   - Next session exact starting point.
+   - "Message in a Bottle": A tactical "what's next" for the next session wrapped in a slightly philosophical summary and forward look to keep things interesting.
 2. `git add . && git commit -m "Momentum Update" && git push`.
