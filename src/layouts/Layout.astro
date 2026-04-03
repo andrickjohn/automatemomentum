@@ -13,23 +13,30 @@ const { title = 'Automate Momentum - We build sales systems for design agencies.
 		<title>{title}</title>
 	</head>
 	<body>
-		<header class="glass-container" style="position: fixed; top: 0; width: 100%; z-index: 1000; padding: var(--space-sm) var(--space-md); display: flex; justify-content: space-between; align-items: center; border-radius: 0; border-top: none; border-left: none; border-right: none;">
-			<div style="font-family: var(--font-mono); font-weight: bold; letter-spacing: 0.05em; font-size: var(--text-sm);">
-				AUTOMATE <span class="text-accent glow-accent">MOMENTUM</span>
+		<header style="position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+			<div style="font-weight: 800; font-size: var(--text-lg); color: var(--color-text-main); letter-spacing: -0.02em;">
+				Automate Momentum
 			</div>
-			<nav style="display: flex; gap: var(--space-md); font-size: var(--text-sm);">
-				<a href="#services" style="color: var(--color-text-main); text-decoration: none;">Services</a>
-				<a href="#process" style="color: var(--color-text-main); text-decoration: none;">How It Works</a>
-				<a href="https://calendly.com/andrickjohn-l0n9/30min" target="_blank" class="text-accent" style="text-decoration: none; font-weight: bold;">Let's Chat</a>
+			<nav style="display: flex; gap: var(--space-md); align-items: center; font-size: var(--text-sm); font-weight: 600;">
+				<a href="#services" style="color: var(--color-text-muted); text-decoration: none;">Services</a>
+				<a href="#process" style="color: var(--color-text-muted); text-decoration: none;">How It Works</a>
+				<a href="#results" style="color: var(--color-text-muted); text-decoration: none;">Results</a>
+				<a href="https://calendly.com/andrickjohn-l0n9/30min" target="_blank" class="btn" style="padding: 0.75rem 1.5rem; font-size: var(--text-sm);">Let's Chat</a>
 			</nav>
 		</header>
 
 		<slot />
 
-		<footer style="padding: var(--space-xl) var(--space-md) var(--space-md); text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: var(--space-2xl);">
-			<div style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-muted);">
-				Engineering the Algorithmic Future.<br/>
-				&copy; {new Date().getFullYear()} Automate Momentum.
+		<footer style="background-color: var(--color-secondary); padding: var(--space-xl) var(--space-md); text-align: center; border-top: 1px solid var(--color-border);">
+			<div style="font-weight: 700; font-size: var(--text-xl); color: var(--color-text-main); margin-bottom: var(--space-sm);">
+				Automate Momentum
+			</div>
+			<p style="font-size: var(--text-sm); max-width: 100%; margin: 0 auto var(--space-md) auto;">
+				Effortless Business Growth &middot; Custom Solutions<br/>
+				&copy; {new Date().getFullYear()} All rights reserved.
+			</p>
+			<div>
+				<a href="https://automatemomentum.com" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Visit Live Site</a>
 			</div>
 		</footer>
 	</body>
