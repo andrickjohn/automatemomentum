@@ -1,18 +1,29 @@
 # Taste Skill Configuration
 # Powered by https://github.com/Leonxlnx/taste-skill
 
-## Parameters (Range 1-10)
-DESIGN_VARIANCE: 3    # Balanced: Clean, centered, highly readable B2B layouts (avoiding experimental asymmetry).
-MOTION_INTENSITY: 4   # Professional: Subtle, grounded hover states and micro-interactions.
-VISUAL_DENSITY: 5     # Optimized B2B: Balanced hierarchy for readable services, removing extreme whitespace.
+## The Rule of Choice
+**CRITICAL INSTRUCTION FOR ALL AGENTS:** 
+Do NOT assume a specific aesthetic or design variance for this project. The client prefers different styles depending on the specific round of development. 
 
-## Aesthetic: "Enterprise Clarity" (minimalist-skill logic)
-- Primary: #FFFFFF (Crisp White)
-- Secondary: #F8FAFC (Soft Slate / Off-White)
-- Accent: #2563EB (Trustworthy Agency Blue)
-- Type: Inter / Clean Sans-Serif (Maximum professional legibility).
+Before starting any new UI/frontend task, you MUST prompt the client and ask them which aesthetic profile or "Taste Skill Variant" they want to use for this specific feature.
 
-## Functional Rules:
-1. Prioritize strict readability and conventional UX/UI flow over high-variance aesthetic experimentation.
-2. Utilize white cards with soft elevation shadows to contain content rather than abstract floating elements.
-3. Information hierarchy must immediately and clearly highlight business value, core offerings, and numerical metrics.
+## Available Taste Skill Options to Present:
+
+1. **Enterprise Clarity Light (Variance 1-3)**
+   - *Vibe:* Hyper-readable, B2B optimized, Notion/Linear style.
+   - *Details:* Inter typography, bright white backgrounds, clean shadow cards, subtle hovers.
+   
+2. **Soft UI (Variance 4-6)**
+   - *Vibe:* Expensive, approachable SaaS (Apple/Stripe).
+   - *Details:* Deep organic shadows, rounded corners, spring animations, premium fonts.
+
+3. **Momentum Noir (Variance 8-10)**
+   - *Vibe:* High-end, experimental luxury.
+   - *Details:* Dark matte blacks, asymmetric overlapping containers, serif headers, aggressive scroll motion.
+
+4. **Brutalist / Mechanical (Variance 7-10)**
+   - *Vibe:* Raw engineering transparency.
+   - *Details:* Monospaced typography, visible grid lines, loud borders, Swiss print logic.
+
+## Execution
+When the user requests UI work, stop and say: *"Which aesthetic profile should we use for this round? (Example: 1. Enterprise Clarity, 2. Soft UI, 3. Momentum Noir, or 4. Brutalist?)"* Only proceed once they choose.
